@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  ::selection {
+    @apply bg-indigo-500/20 text-indigo-900;
+  }
+}
+
+@layer components {
+  .input-field {
+    @apply w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 transition-colors placeholder:text-gray-400 hover:border-indigo-300 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20;
+  }
+
+  .btn-solid {
+    @apply w-full rounded-lg bg-gradient-to-r from-indigo-500 to-indigo-600 px-4 py-3 text-sm font-semibold uppercase tracking-wider text-white shadow-sm transition-all hover:from-indigo-600 hover:to-indigo-700 hover:shadow-md;
+  }
+
+  .btn-danger {
+    @apply w-full rounded-lg bg-gradient-to-r from-red-500 to-red-600 px-4 py-3 text-sm font-semibold uppercase tracking-wider text-white shadow-sm transition-all hover:from-red-600 hover:to-red-700 hover:shadow-md;
+  }
+
+  .btn-outline {
+    @apply w-full rounded-lg border-2 border-indigo-200 bg-indigo-50/50 px-4 py-3 text-sm font-semibold uppercase tracking-wider text-indigo-600 transition-all hover:border-indigo-500 hover:bg-indigo-50;
+  }
+
+  .label-field {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wider text-gray-500;
+  }
+
+  .card {
+    @apply rounded-xl border border-gray-100 bg-white shadow-md shadow-gray-200/50;
+  }
+
+  .card-accent {
+    @apply card relative overflow-hidden;
+  }
+
+  .card-accent::before {
+    content: "";
+    @apply absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-indigo-500 to-purple-500;
+  }
+
+  .btn-action {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors;
+  }
+
+  .btn-action-edit {
+    @apply btn-action border border-indigo-200 bg-indigo-50 text-indigo-600 hover:border-indigo-300 hover:bg-indigo-100;
+  }
+
+  .btn-action-delete {
+    @apply btn-action border border-red-200 bg-red-50 text-red-600 hover:border-red-300 hover:bg-red-100;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme("colors.gray.200") transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: theme("colors.gray.200");
+  }
+}
